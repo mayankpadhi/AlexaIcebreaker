@@ -24,7 +24,7 @@ def getEntertainment():
 	response= requests.get(url)
 	respObj = response.json()
 	for element in respObj['articles']:
-		x= element['description']
+		x= "did you know "+element['description']
 	return x;
 
 def getSports():
@@ -36,20 +36,20 @@ def getSports():
 	response= requests.get(url)
 	respObj = response.json()
 	for element in respObj['articles']:
-		x= element['description']
+		x= "did you know "+element['description']
 	return x;
 
 def getHistory():
 	url = "http://numbersapi.com/"+str(now.month)+"/"+str(now.day)+"/date?json"
 	response= requests.get(url)
 	respObj = response.json()
-	return respObj['text']
+	return "did you know "+respObj['text']
 
 def getTrivia():
 	url = "http://numbersapi.com/random/trivia?json"
 	response= requests.get(url)
 	respObj = response.json()
-	return respObj['text']
+	return "did you know "+respObj['text']
 
 def getYodaQuote():
 	rand= random.randint(1, 4);
