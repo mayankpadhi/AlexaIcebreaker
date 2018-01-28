@@ -1,21 +1,27 @@
-# Alexa with Yoda quotes
+# Alexa with Nice Icebreaker skill
 
 ## Introduction
 
-This is an alexa skill which gives you a Yoda quote when you ask for it. It can also be used a a boilerplate for building alexa skills.
+This is an alexa skill which gives you a nice icebreaker when you ask for it. You can use it to initiate a conversation or a discussion with people around you.
 
 ## How does it work?
 
 ### Workflow
 You can test out this skill using an Amazon Echo device or at [Echosim](https://echosim.io). The workflow is as follows:
-- You invoke the skill saying "Alexa, start Yoda skill."
-- Alexa will give you a yoda quote and ask if you want more.
-- If you say yes, it would again give you a yoda quote and ask if you want more. If you say no, it will exit out of the skiil.
+- You invoke the skill saying "Alexa, start Nice Icebreaker."
+- Alexa will give you a nice icebreaker and ask if you want more.
+- If you say yes, it would again give you a nice icebreaker and ask if you want more. If you say no, it will exit out of the skill.
 
 ### Internal Implementation
 
 This skill is written in Python using Flask and the python library [Flask-Ask](https://github.com/johnwheeler/flask-ask). The Implementation is as follows:
-- When you invoke the skill, one of the Yoda quotes is fetched from the database (this data comes along with this project. Don't worry about adding it yourself)and spoken out by Alexa along with a question if you want more of yoda quotes.
+- When you invoke the skill, one of the four functions is called:
+    * Latest Indian Entertainment News.
+    * Latest Indian Sports News.
+    * A "This Day in History" fact.
+    * A number trivia.
+
+- The output of the function is spoken out by Alexa along with a question if you want more nice icebreaker.
 - If you say yes, first step repeats.
 - If you say no, Alexa echoes "Bye" and exits out of the skill.
 
@@ -27,8 +33,8 @@ This skill gets deployed instantly. Also, Hasura automatically generates SSL cer
 (Make sure you have [hasura-cli](https://docs.hasura.io/0.15/manual/install-hasura-cli.html))
 
 ```
-$ hasura quickstart rishi/alexa-yoda-bot
-$ cd alexa-yoda-bot
+$ hasura quickstart mayankpadhi/alexa-icebreaker
+$ cd alexa-icebreaker
 $ git add . && git commit -m "Initial Commit"
 $ git push hasura master
 ```
@@ -37,7 +43,7 @@ $ git push hasura master
 
 To link it with your Amazon Echo Device, go to your [Amazon developer console](https://developer.amazon.com/edw/home.html#/skills).
 
-1. Create a new skill. Call it `Yoda Quote`. Give the invocation name as `yoda quote`. Click next.
+1. Create a new skill. Call it `Nice Icebreaker`. Give the invocation name as `nice icebreaker`. Click next.
 
 2. Add this intent schema
 
@@ -73,7 +79,7 @@ NoIntent nope
 
 	Put the default URL as `https://bot.<cluster-name>.hasura-app.io/yoda_quotes`. (Run `$ hasura cluster status` from root directory to know your cluster name).
 
-	**Note**: For quick testing, we have one skill service live at https://bot.dedication76.hasura-app.io/yoda_quotes. (This test service will work only if you have followed 1 and 2)
+	**Note**: For quick testing, we have one skill service live at https://bot.enclosed28.hasura-app.io/yoda_quotes. (This test service will work only if you have followed 1 and 2)
 
 	Click next.
 
@@ -81,14 +87,4 @@ NoIntent nope
 
 	Click next.
 
-5. Your skill is live on the ECHO device associated with your account. Test it by saying **Alexa**, `load yoda quote`. And Alexa will give you *Yoda* wisdom :)
-
-## How to use it as a boilerplate?
-
-The source code lies in the `microservices/bot/app/src` directory. This is a simple application, so the entire code lies in `server.py`.
-
-You might want to go through the Flask-ask docs (a very quick read).
-
-## Support
-
-If you happen to getstuck at any point, feel free to mail me at tanmaig@gmail.com. Also, if you find an error or a bug, please raise an issue [here](https://github.com/wawhal/alexa-skill-starter).
+5. Your skill is live on the ECHO device associated with your account. Test it by saying **Alexa**, `load nice icebreaker`. And Alexa will give you nice *Icebreaker* :)
