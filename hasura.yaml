@@ -1,2 +1,8 @@
-name: alexa-yoda-skill
+description: Ever feel yourself in a situation where you find it difficult to start
+  a conversation with the next person. This alexa skill comes to your rescue by generating
+  an icebreaker. You can also use it to start a discussion among a group of people
+  too.
+keywords: social, friend, bot, conversation, discussion, icebreaker, alexa
+media: {}
+name: alexa-nice-icebreaker
 platformVersion: v0.15.3
