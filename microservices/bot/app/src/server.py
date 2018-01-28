@@ -16,7 +16,8 @@ now = datetime.datetime.now()
 
 ask = Ask(app, "/yoda_quotes")
 def getEntertainment():
-	url = "https://newsapi.org/v2/top-headlines?country=in&category=entertainment&pagesize=1&page=2&apiKey=5111f0da1fe0402ba1f08867dc513e8b"
+	rand= random.randint(1, 9);
+	url = "https://newsapi.org/v2/top-headlines?country=in&category=entertainment&pagesize=1&page="+str(rand)+"&apiKey=5111f0da1fe0402ba1f08867dc513e8b"
 	headers = {
 		"Content-Type": "application/json",
 		"X-api-key": "5111f0da1fe0402ba1f08867dc513e8b"
@@ -28,7 +29,8 @@ def getEntertainment():
 	return x;
 
 def getSports():
-	url = "https://newsapi.org/v2/top-headlines?country=in&category=sports&pagesize=1&page=2&apiKey=5111f0da1fe0402ba1f08867dc513e8b"
+	rand= random.randint(1, 9);
+	url = "https://newsapi.org/v2/top-headlines?country=in&category=sports&pagesize=1&page="+str(rand)+"&apiKey=5111f0da1fe0402ba1f08867dc513e8b"
 	headers = {
 		"Content-Type": "application/json",
 		"X-api-key": "5111f0da1fe0402ba1f08867dc513e8b"
@@ -83,6 +85,5 @@ def shareQuote():
 
 @ask.intent("NoIntent")
 def noIntent():
-    byeText = 'Lol... OK... Bye'
+    byeText = 'Fine... OK... Bye'
     return statement(byeText)
-
