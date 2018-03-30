@@ -1,7 +1,3 @@
-#Key: 5111f0da1fe0402ba1f08867dc513e8b
-# sports
-# /alexa-yoda-skill/microservices/bot/app/src
-
 from src import app
 from flask_ask import Ask, statement, question, session
 import json
@@ -15,22 +11,9 @@ from collections import namedtuple
 now = datetime.datetime.now()
 
 ask = Ask(app, "/yoda_quotes")
-def getEntertainment():
+def getNews(category):
 	rand= random.randint(1, 9);
-	url = "https://newsapi.org/v2/top-headlines?country=in&category=entertainment&pagesize=1&page="+str(rand)+"&apiKey=5111f0da1fe0402ba1f08867dc513e8b"
-	headers = {
-		"Content-Type": "application/json",
-		"X-api-key": "5111f0da1fe0402ba1f08867dc513e8b"
-	}
-	response= requests.get(url)
-	respObj = response.json()
-	for element in respObj['articles']:
-		x= "did you know "+element['description']
-	return x;
-
-def getSports():
-	rand= random.randint(1, 9);
-	url = "https://newsapi.org/v2/top-headlines?country=in&category=sports&pagesize=1&page="+str(rand)+"&apiKey=5111f0da1fe0402ba1f08867dc513e8b"
+	url = "https://newsapi.org/v2/top-headlines?country=in&category="+category+"&pagesize=1&page="+str(rand)+"&apiKey=5111f0da1fe0402ba1f08867dc513e8b"
 	headers = {
 		"Content-Type": "application/json",
 		"X-api-key": "5111f0da1fe0402ba1f08867dc513e8b"
@@ -56,10 +39,10 @@ def getTrivia():
 def getYodaQuote():
 	rand= random.randint(1, 4);
 	if rand== 1 :
-		return getEntertainment()
+		return getNews("Entertainment")
 
 	elif rand== 2 :
-		return getSports()
+		return getNews("Sports")
 
 	elif rand== 3 :
 		return getHistory()
