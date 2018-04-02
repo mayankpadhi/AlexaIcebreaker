@@ -79,7 +79,7 @@ NoIntent nope
 
 	Put the default URL as `https://bot.<cluster-name>.hasura-app.io/yoda_quotes`. (Run `$ hasura cluster status` from root directory to know your cluster name).
 
-	**Note**: For quick testing, we have one skill service live at https://bot.enclosed28.hasura-app.io/yoda_quotes. (This test service will work only if you have followed 1 and 2)
+	**Note**: For quick testing, we have one skill service live at https://bot.brawl60.hasura-app.io/yoda_quotes. (This test service will work only if you have followed 1 and 2)
 
 	Click next.
 
