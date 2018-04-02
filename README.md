@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This is an alexa skill which gives you a nice icebreaker when you ask for it. You can use it to initiate a conversation or a discussion with people around you.
+This is an alexa skill which gives you a nice icebreaker when you ask for it. You can use it to initiate a conversation or a discussion with people around you. It was featured in hasura hub https://hasura.io/hub/projects/mayankpadhi/alexa-nice-icebreaker
 
 ## How does it work?
 
